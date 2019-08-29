@@ -1,26 +1,28 @@
 <?php
 require_once './header.php';
-if (isset($_POST['cname'])) {
-    $cName = sanitizeString($_POST['cname']);
-    $cDescription = sanitizeString($_POST['cdescription']);
-    $error = $message = "";
+if (isset($_POST['cid'], $_POST['cname'], $_POST['cdescription'])) {
+    $sql = "INSERT INTO catalogue(cid, cname, cdescription) values(:cid , :cname, :cdescription)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
+    $stmt->bindValue(':cname', $_POST['cname'], PDO::PARAM_STR);
+    $stmt->bindValue(':cdescription', $_POST['cdescription'], PDO::PARAM_STR);
+    $pdoExec = $stmt->execute();
     
-        
-        $query = "INSERT INTO catalogue(cname, cdescription)"
-                . "values('$cName' , '$cDescription')";
-        $result = $pdo->query($sql);
-        if (!$result) {
-            $error = "Adding error, please try again";
-        } else {
-            $message = "Added successfully";
-        }    
+        // check if mysql insert query successful
+    if($pdoExec)
+    {
+        echo 'Data Inserted';
+    }else{
+        echo 'Data Not Inserted';
+    }
 }
 ?>
 <br>
 <form action = "addcatalogue.php" method = "post">
     <fieldset class = "fitContent">
         <legend>Add Catalogue</legend>
-        <span class="error"><?php echo $error; ?></span><br>
+        ID : <br>
+        <input type="text" name="cid"/><br>
         Name<br>
         <input type="text" name="cname"   required /><br>
         Description<br>
