@@ -4,9 +4,9 @@
         <title>ATN Toy Store</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <style>
+<style>
             .container{
-                width: 90%;
+                width: 100%;
                 margin: 0 auto;
             }
             .container img{
@@ -38,14 +38,14 @@
                 line-height: 30px;
                 padding-left: 5px;
                 font-weight: bold;
-                color: red;
+                color: black;
             }
             .detail{
                 padding-left: 15px;
                 box-sizing: border-box;
             }
             .des{
-                color: greenyellow;
+                color: red;
                 font-size: 18px;
                 padding-left: 10px;
                 padding-top: 10px;
