@@ -8,7 +8,7 @@ if (isset($_POST['cname'])) {
         
         $query = "INSERT INTO catalogue(cname, cdescription)"
                 . "values('$cName' , '$cDescription')";
-        $result = pg_query($query);
+        $result = $pdo->pg_query($query);
         if (!$result) {
             $error = "Adding error, please try again";
         } else {
