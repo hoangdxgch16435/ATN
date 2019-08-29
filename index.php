@@ -109,8 +109,9 @@ if (!$result){
 }
 ?>
 
+        
         <div class="container">
-            <center><img src="images/ToyStore.jpg"></center>
+            <center><img src="toy.png"></center>
             <div class="header">
                 
                 <div class="nav">
@@ -118,8 +119,8 @@ if (!$result){
                         <li><a href="./index.php">Home</a></li>
                         <li><a href="./login.php">Admin</a></li>
                         <li><a href="#Lego">Lego</a></li>
-                        <li><a href="#Figure">Figure</a></li>
-                        <li><a href="#Clay">Clay</a></li>
+                        <li><a href="#Doll">Doll</a></li>
+                        <li><a href="#Pants">Pants</a></li>
 
                     </ul>
 
@@ -131,10 +132,10 @@ if (!$result){
 
                     <div class="detail">
                         <div class="title">
-                            <i>ATN Toy Store</i>
+                            <i>Hoang's Toy Store</i>
                         </div>
                         <div class="des">
-                             Find your favorite toy!!!
+                            Paradise for children ! 
                         </div>
                     </div>
                 </div>
