@@ -1,6 +1,8 @@
 <nav>
     <ul>
-        
+        <?php
+        require_once './header.php';
+        ?>
         <li>
             <a href="">Manage Catalogue</a>
             <ul>
