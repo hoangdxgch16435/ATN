@@ -8,7 +8,7 @@ if (isset($_POST['cname'])) {
         
         $query = "INSERT INTO Catalogue(cname, cdescription, lastModifiedBy)"
                 . "values('$cName' , '$cDescription')";
-        $result = queryMysql($query);
+        $result = pg_query($pdo, $query);
         if (!$result) {
             $error = "Adding error, please try again";
         } else {
