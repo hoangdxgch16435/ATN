@@ -6,7 +6,7 @@ if (isset($_POST['cname'])) {
     $error = $message = "";
     
         
-        $query = "INSERT INTO Catalogue(cname, cdescription, lastModifiedBy)"
+        $query = "INSERT INTO Catalogue(cname, cdescription)"
                 . "values('$cName' , '$cDescription')";
         $result = pg_query($pdo, $query);
         if (!$result) {
