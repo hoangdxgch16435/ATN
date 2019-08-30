@@ -51,17 +51,8 @@ if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice
         Image:<br>
         <input type="text" name="iimage"/><br>
         Catalogue:<br>
-        <select name="cid">
-            <?php
-            $query = "SELECT cid, cname FROM catalogue";
-            $batches = $pdo->query($query);
-            while ($batch = pg_fetch_array($batches)) {
-                $cId = $batch['cid'];
-                $cName = $batch['cname'];
-                echo "<option value='$cId'>$cName</option>";
-            }
-            ?>
-        </select><br><br>
+        <input type="text" name="cid"/><br>
+        <br><br>
         <input type="submit" value="Add" name="add"/>
     </fieldset>
 </form>
