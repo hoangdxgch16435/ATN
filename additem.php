@@ -2,7 +2,7 @@
 require_once 'header.php';
 
 //getting the data
-$error = $msg = "";
+
 
 if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['iimage'], $_POST['cid'])) 
 {
@@ -32,8 +32,7 @@ if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice
 <br><br>
 <form action="additem.php" method="POST" enctype="multipart/form-data">
     <fieldset>
-        <div class="error"><?php echo $error; ?></div>
-        <div class="msg"><?php echo $msg; ?></div>
+
         <legend>Add Item</legend>
         
         ID: <br>
