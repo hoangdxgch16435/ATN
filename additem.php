@@ -3,38 +3,31 @@ require_once 'header.php';
 
 //getting the data
 $error = $msg = "";
-if (isset($_POST['add'])) { //adding
-    $iId = sanitizeString($_POST['iid']);
-    $iName = sanitizeString($_POST['iname']);
-    $iDescription = sanitizeString($_POST['idescription']);
-    $iPrice = sanitizeString($_POST['iprice']);
-    $iStatus = sanitizeString($_POST['istatus']);
-    $iSize = sanitizeString($_POST['isize']);    
-    $sImage = "";
-    $extension = "";
-    //Process the uploaded image
-    if (isset($_FILES['iimage']) && $_FILES['iimage']['size'] != 0) {
-        $temp_name = $_FILES['iimage']['tmp_name'];
-        $name = $_FILES['iimage']['name'];
-        $parts = explode(".", $name);
-        $lastIndex = count($parts) - 1;
-        $extension = $parts[$lastIndex];
-        $iImage = "$iId.$extension";
-        $destination = "./images/item/$iImage";
-        //Move the file from temp loc => to our image folder
-        move_uploaded_file($temp_name, $destination);
-    }
-    $cId = sanitizeString($_POST['cid']);
-    //TODO: Do the PHP validation here to protect your server
-    //Add the student
-    $query = "INSERT INTO Item values ('$iId','$iName','$iDescription','$iPrice','$iStatus','$iSize','$iImage','$cId')";
-    $result = queryMySql($query);
-    if (!$result) {
-        $error = $error . "<br>Can't add Item, please try again";
-    } else {
-        $msg = "Added $iName successfully!";
+
+if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['iimage'], $_POST['cid'])) 
+{
+    $sql = "INSERT INTO item(iid, iname, idescription, iprice, istatus, isize) values(:iid , :iname, :idescription, :iprice, :istatus, :isize, :iimage, :cid)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
+    $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
+    $stmt->bindValue(':idescription', $_POST['idescription'], PDO::PARAM_STR);
+    $stmt->bindValue(':iprice', $_POST['iprice'], PDO::PARAM_STR);
+    $stmt->bindValue(':istatus', $_POST['istatus'], PDO::PARAM_STR);
+    $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
+    $stmt->bindValue(':iimage', $_POST['iimage'], PDO::PARAM_STR);
+     $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
+    $pdoExec = $stmt->execute();
+    
+        // check if mysql insert query successful
+    if($pdoExec)
+    {
+        echo 'Data Inserted';
+    }else{
+        echo 'Data Not Inserted';
     }
 }
+
+
 ?>
 <br><br>
 <form action="additem.php" method="POST" enctype="multipart/form-data">
@@ -62,8 +55,8 @@ if (isset($_POST['add'])) { //adding
         <select name="cid">
             <?php
             $query = "SELECT cid, cname FROM catalogue";
-            $batches = queryMysql($query);
-            while ($batch = mysqli_fetch_array($batches)) {
+            $batches = pdo->query($query);
+            while ($batch = pg_fetch_array($batches)) {
                 $cId = $batch['cid'];
                 $cName = $batch['cname'];
                 echo "<option value='$cId'>$cName</option>";
