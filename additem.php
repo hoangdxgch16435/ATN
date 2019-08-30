@@ -30,8 +30,8 @@ if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice
 
 ?>
 <br><br>
-<form action="additem.php" method="POST" enctype="multipart/form-data">
-    <fieldset>
+<form action="additem.php" method="POST" >
+    <fieldset class = "fitcontenter">
 
         <legend>Add Item</legend>
         
@@ -49,7 +49,7 @@ if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice
         Size:<br>
         <input type="text" name="isize" maxlength="15"/><br>     
         Image:<br>
-        <input type="file" name="iimage"/><br>
+        <input type="text" name="iimage"/><br>
         Catalogue:<br>
         <select name="cid">
             <?php
