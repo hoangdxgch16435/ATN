@@ -15,7 +15,7 @@ if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice
     $stmt->bindValue(':istatus', $_POST['istatus'], PDO::PARAM_STR);
     $stmt->bindValue(':isize', $_POST['isize'], PDO::PARAM_STR);
     $stmt->bindValue(':iimage', $_POST['iimage'], PDO::PARAM_STR);
-     $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
+    $stmt->bindValue(':cid', $_POST['cid'], PDO::PARAM_STR);
     $pdoExec = $stmt->execute();
     
         // check if mysql insert query successful
@@ -51,7 +51,7 @@ if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice
         Image:<br>
         <input type="text" name="iimage"/><br>
         Catalogue:<br>
-        <input type="text" name="cid"/><br>
+        <input type="text" name="cid" maxlength="15" required /><br>
         <br><br>
         <input type="submit" value="Add" name="add"/>
     </fieldset>
