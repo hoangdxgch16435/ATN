@@ -6,7 +6,7 @@ require_once 'header.php';
 
 if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice'], $_POST['istatus'], $_POST['isize'], $_POST['iimage'], $_POST['cid'])) 
 {
-    $sql = "INSERT INTO item(iid, iname, idescription, iprice, istatus, isize, cid) values(:iid , :iname, :idescription, :iprice, :istatus, :isize, :iimage, :cid)";
+    $sql = "INSERT INTO item(iid, iname, idescription, iprice, istatus, isize, iimage, cid) values(:iid , :iname, :idescription, :iprice, :istatus, :isize, :iimage, :cid)";
     $stmt = $pdo->prepare($sql);
     $stmt->bindValue(':iid', $_POST['iid'], PDO::PARAM_STR);
     $stmt->bindValue(':iname', $_POST['iname'], PDO::PARAM_STR);
