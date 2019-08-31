@@ -49,7 +49,7 @@ if (isset($_POST['iid'], $_POST['iname'], $_POST['idescription'], $_POST['iprice
         Size:<br>
         <input type="text" name="isize" maxlength="15"/><br>     
         Image:<br>
-        <input type="text" name="iimage"/><br>
+        <input type="text" name="iimage" maxlength="20"/><br>
         Catalogue:<br>
         <input type="text" name="cid" maxlength="15" required /><br>
         <br><br>
