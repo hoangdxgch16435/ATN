@@ -146,13 +146,13 @@ if (!$result){
                     <div class="" id="Lego"><h2>Lego</h2>
                     <?php
      require_once './functions.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.catalogueId=Catalogue.cId AND cName LIKE '%Bag%'  ORDER BY cName";
-     $result = queryMysql($query);
+     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM item,catalogue WHERE item.cid=catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cname";
+     $result =$pdo->query($query);
      $error = $msg = "";
      if (!$result){
       $error = "Couldn't load data, please try again.";
      }
-     while ($row = mysqli_fetch_array($result)) {
+     while ($row = pg_fetch_assoc($result)) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
