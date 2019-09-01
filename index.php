@@ -98,7 +98,16 @@
         </style>
     </head>
     <body>
-
+        <?php
+include './functions.php';
+//load items
+$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item ";
+$result = $pdo->query($query);
+$error = $msg = "";
+if (!$result){
+    $error = "Couldn't load data, please try again.";
+}
+?>
 
         
         <div class="container">
@@ -138,7 +147,7 @@
                     <?php
      include './functions.php';
      $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM item,catalogue WHERE item.cid=catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cname";
-     $result =pg_query($pdo,$query);
+     $result =$pdo->query($query);
      $error = $msg = "";
      if (!$result){
       $error = "Couldn't load data, please try again.";
