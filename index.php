@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>H Store</title>
+        <title>ATN Store</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
@@ -129,7 +129,7 @@ $result = queryMysql($query);
 
                     <div class="detail">
                         <div class="title">
-                            <i>Welcome to H Store</i>
+                            <i>Welcome to ATN Store</i>
                         </div>
                         <div class="des">
                              Baby's paradise!!!
@@ -246,7 +246,7 @@ $result = queryMysql($query);
       border: 1px solid #484747;">
     </form>
   </div>
-  <div class="childfooter" id="rightfooter" style="padding: 20px; padding-left: 40px">© 2019 H Store. All Rights Reserved | Design by Hoang GCH16435</div>
+  <div class="childfooter" id="rightfooter" style="padding: 20px; padding-left: 40px">© 2019 ATN Store. All Rights Reserved | Design by Hoang GCH16435</div>
               
             </div>
         </div>
