@@ -229,10 +229,25 @@ $result = queryMysql($query);
 ?>
      
                 </div>  
-                </div>     
+                </div>    
+
                     
             <div class="footer">
-              <div><center>Made by HoangPinLao</center></div>
+              <div class="container-fluid" style="margin-left: 150px;">
+  <div class="childfooter" id="leftfooter">
+    <form action="#">
+      <input type="text" placeholder="Enter your Email" style="border: 1px solid #484747; padding: 8px;">
+      <input type="submit" value="Subcrible" style=" padding: 7px;
+      padding-left: 20px;
+      text-align: center;
+      padding-right: 20px;
+      background-color: white;
+      background: gray;
+      border: 1px solid #484747;">
+    </form>
+  </div>
+  <div class="childfooter" id="rightfooter" style="padding: 20px; padding-left: 40px">© 2018 ATN SUPPER. All Rights Reserved | Design by Buitam</div>
+              <div><center>Made by HoangPin</center></div>
             </div>
         </div>
     </body>
