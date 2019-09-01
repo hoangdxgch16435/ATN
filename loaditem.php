@@ -13,13 +13,6 @@ $result->execute();
 $resultSet = $result->fetchAll();
 ?>
 <br><br>
-<div>
-    <form action="loaditem.php" method="post">
-        Search Product:
-        <input type="search" name="keyword"/>
-        <input type="submit" value="Go"/>
-    </form>
-</div>
 <br>
 <table class="tbl">
     <tr>
@@ -48,7 +41,7 @@ $resultSet = $result->fetchAll();
         echo "<td>$iPrice</td>";
         echo "<td>$iStatus</td>";
         echo "<td>$iSize</td>";
-        echo "<td ><img src='./images/item/". $iImage . "' height='200px'></td>";
+        echo "<td ><img src='". $iImage . "' height='200px'></td>";
         ?>
         <td>
             <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
