@@ -8,6 +8,11 @@ $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM i
 //}
 $result = queryMysql($query);
 $result = queryMysql($query);
+$result = queryMysql($query);
+$result = queryMysql($query);
+$result = queryMysql($query);
+$result = queryMysql($query);
+$result = queryMysql($query);
 $result->setFetchMode(PDO::FETCH_ASSOC);
 $result->execute();
 $resultSet = $result->fetchAll();

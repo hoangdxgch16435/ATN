@@ -2,7 +2,8 @@
 require_once './header.php';
 
 $query = "SELECT cid, cname, cdescription from catalogue";
-
+$result = queryMysql($query);
+$result = queryMysql($query);
 $result->setFetchMode(PDO::FETCH_ASSOC);
 $result->execute();
 $resultSet = $result->fetchAll();
