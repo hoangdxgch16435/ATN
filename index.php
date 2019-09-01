@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ATN Toy Store</title>
+        <title>Hoang Shop</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
             .container{
-                width: 90%;
+                width: 100%;
                 margin: 0 auto;
             }
             .container img{
@@ -38,14 +38,14 @@
                 line-height: 30px;
                 padding-left: 5px;
                 font-weight: bold;
-                color: red;
+                color: black;
             }
             .detail{
                 padding-left: 15px;
                 box-sizing: border-box;
             }
             .des{
-                color: green;
+                color: red;
                 font-size: 18px;
                 padding-left: 10px;
                 padding-top: 10px;
@@ -71,7 +71,7 @@
             .nav{
                 width: 100%;
                 height: 50px;
-                background-color: pink;
+                background-color: black;
             }
             .nav ul{
                 margin: 0;
@@ -79,7 +79,7 @@
                 list-style: none;
             }
             .nav a{
-                color:purple;
+                color:whitesmoke;
                 font-size: 30px;
                 text-decoration: none;
                 line-height: 50px;
@@ -90,10 +90,10 @@
                 float: left;
             }
             .nav a:hover{
-                color: black;
+                color: #792323;
             }
             .nav li:hover{
-                background-color:red;
+                background-color:#DCF4F6;
             }
         </style>
     </head>
@@ -107,7 +107,7 @@ $result = queryMysql($query);
 ?>
 
             <div class="container">
-            <center><img src="images/ToyStore.jpg"></center>
+            <center><img src="toy.png"></center>
             <div class="header">
                 
                 <div class="nav">
