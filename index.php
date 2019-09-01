@@ -16,7 +16,7 @@
             .footer{
                 width: 100%;
                 height: 100px;
-                background-color: gray;
+                background-color: white;
             }
             .main{
                 width: 100%;
@@ -107,7 +107,42 @@ $result = queryMysql($query);
 ?>
 
             <div class="container">
-            <center><img src="toy.png"></center>
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active">
+        <img src="toy.png" alt="Chania" width="460" height="345">
+       <!--  <div class="carousel-caption">
+         <h3>Vin De France</h3>
+         <p>Can't Resist the Mist!</p>
+       </div> -->
+      </div>
+
+      <div class="item">
+        <img src="banner2.jpg" alt="Chania" width="460" height="345">
+        <!-- <div class="carousel-caption">
+          <h3>Vin De France</h3>
+          <p>Great Tasting Wine with a Splash of Fruit </p>
+        </div> -->
+      </div>
+    
+      <div class="item">
+        <img src="banner3.jpg" alt="Chania" width="460" height="345">
+        <!-- <div class="carousel-caption">
+          <h3>Vin De France</h3>
+          <p>Just what you've been looking for</p>
+        </div> -->
+      </div>
+            
             <div class="header">
                 
                 <div class="nav">
