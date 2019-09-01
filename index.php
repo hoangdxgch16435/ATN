@@ -16,7 +16,7 @@
             .footer{
                 width: 100%;
                 height: 100px;
-                background-color: black;
+                background-color: green;
             }
             .main{
                 width: 100%;
@@ -278,6 +278,7 @@ $result = queryMysql($query);
                         
             </div>
             <div class="footer">
+              <div><center>Made by HoangPinLao</center></div>
             </div>
         </div>
     </body>
