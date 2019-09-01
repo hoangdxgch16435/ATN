@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hoang Shop</title>
+        <title>H Store</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
@@ -129,10 +129,10 @@ $result = queryMysql($query);
 
                     <div class="detail">
                         <div class="title">
-                            <i>ATN Toy Store</i>
+                            <i>Welcome to H Store</i>
                         </div>
                         <div class="des">
-                             Find your favorite toy!!!
+                             Baby's paradise!!!
                         </div>
                     </div>
                 </div>
@@ -246,8 +246,8 @@ $result = queryMysql($query);
       border: 1px solid #484747;">
     </form>
   </div>
-  <div class="childfooter" id="rightfooter" style="padding: 20px; padding-left: 40px">© 2018 ATN SUPPER. All Rights Reserved | Design by Buitam</div>
-              <div><center>Made by HoangPin</center></div>
+  <div class="childfooter" id="rightfooter" style="padding: 20px; padding-left: 40px">© 2019 H Store. All Rights Reserved | Design by Hoang GCH16435</div>
+              
             </div>
         </div>
     </body>
