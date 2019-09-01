@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <style>
             .container{
-                width: 100%;
+                width: 80%;
                 margin: 0 auto;
             }
             .container img{
