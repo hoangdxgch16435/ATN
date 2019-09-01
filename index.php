@@ -98,16 +98,7 @@
         </style>
     </head>
     <body>
-        <?php
-require_once './functions.php';
-//load items
-$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item ";
-$result = $pdo->query($sql);
-$error = $msg = "";
-if (!$result){
-    $error = "Couldn't load data, please try again.";
-}
-?>
+
 
         
         <div class="container">
