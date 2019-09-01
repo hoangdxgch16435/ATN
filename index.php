@@ -171,7 +171,7 @@ $result = queryMysql($query);
               <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <button><h3>Price: $iPrice$</h3></button>
+              <h3>Price: $iPrice$</h3>
               <p>Description: $iDescription.</p>
               <h4>Size: $iSize</h4>                           
           </div>                                                    
@@ -216,7 +216,7 @@ $result = queryMysql($query);
               <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <button><h3>Price: $iPrice$</h3></button>
+              <h3>Price: $iPrice$</h3>
               <p>Description: $iDescription.</p>
               <h4>Size: $iSize</h4>                           
           </div>                                                    
@@ -261,7 +261,7 @@ $result = queryMysql($query);
               <img src='./images/". $iImage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
-              <button><h3>Price: $iPrice$</h3></button>
+              <h3>Price: $iPrice$</h3>
               <p>Descripton: $iDescription.</p>
               <h4>Size: $iSize</h4>                           
           </div>                                                    
