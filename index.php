@@ -16,7 +16,7 @@
             .footer{
                 width: 100%;
                 height: 100px;
-                background-color: green;
+                background-color: black;
             }
             .main{
                 width: 100%;
@@ -106,7 +106,7 @@ $result = queryMysql($query);
 
 ?>
 
-        <div class="container">
+            <div class="container">
             <center><img src="images/ToyStore.jpg"></center>
             <div class="header">
                 
@@ -121,6 +121,7 @@ $result = queryMysql($query);
                     </ul>
 
 
+                
                 </div>
             </div>
             <div class="main">
