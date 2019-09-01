@@ -2,15 +2,12 @@
 require_once './header.php';
 
 $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item";
-if(isset($_POST['keyword'])){
-    $keyword = sanitizeString($_POST['keyword']);
-    $query = $query . " WHERE iName LIKE '%$keyword%' OR iId LIKE '%$keyword%'";
-}
+//if(isset($_POST['keyword'])){
+//    $keyword = sanitizeString($_POST['keyword']);
+//    $query = $query . " WHERE iName LIKE '%$keyword%' OR iId LIKE '%$keyword%'";
+//}
 $result = queryMysql($query);
-$error = $msg = "";
-if (!$result){
-    $error = "Couldn't load data, please try again.";
-}
+$result = queryMysql($query);
 $result->setFetchMode(PDO::FETCH_ASSOC);
 $result->execute();
 $resultSet = $result->fetchAll();
