@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>H Toy Store</title>
+        <title>ATN Toy Store</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
+        <style>
             .container{
-                width: 100%;
+                width: 90%;
                 margin: 0 auto;
             }
             .container img{
@@ -38,14 +38,14 @@
                 line-height: 30px;
                 padding-left: 5px;
                 font-weight: bold;
-                color: black;
+                color: red;
             }
             .detail{
                 padding-left: 15px;
                 box-sizing: border-box;
             }
             .des{
-                color: red;
+                color: green;
                 font-size: 18px;
                 padding-left: 10px;
                 padding-top: 10px;
@@ -71,7 +71,7 @@
             .nav{
                 width: 100%;
                 height: 50px;
-                background-color: black;
+                background-color: pink;
             }
             .nav ul{
                 margin: 0;
@@ -79,7 +79,7 @@
                 list-style: none;
             }
             .nav a{
-                color:whitesmoke;
+                color:purple;
                 font-size: 30px;
                 text-decoration: none;
                 line-height: 50px;
@@ -90,10 +90,10 @@
                 float: left;
             }
             .nav a:hover{
-                color: #792323;
+                color: black;
             }
             .nav li:hover{
-                background-color:#DCF4F6;
+                background-color:red;
             }
         </style>
     </head>
@@ -102,25 +102,21 @@
 require_once './functions.php';
 //load items
 $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item ";
-$result = $pdo->query($sql);
-$error = $msg = "";
-if (!$result){
-    $error = "Couldn't load data, please try again.";
-}
+$result = queryMysql($query);
+
 ?>
 
-        
         <div class="container">
-            <center><img src="toy.png"></center>
+            <center><img src="images/ToyStore.jpg"></center>
             <div class="header">
                 
                 <div class="nav">
                     <ul>
-                        <li><a href="./index.php">Home</a></li>
-                        <li><a href="./menu_admin.php">Admin</a></li>
+                        <center><li><a href="./index.php">Home</a></li></center>
+                        <center><li><a href="./header.php">Admin</a></li></center>
                         <li><a href="#Lego">Lego</a></li>
-                        <li><a href="#Doll">Doll</a></li>
-                        <li><a href="#Pants">Pants</a></li>
+                        <li><a href="#Figure">Figure</a></li>
+                        <li><a href="#Clay">Clay</a></li>
 
                     </ul>
 
@@ -132,10 +128,10 @@ if (!$result){
 
                     <div class="detail">
                         <div class="title">
-                            <i>Hoang's Toy Store</i>
+                            <i>ATN Toy Store</i>
                         </div>
                         <div class="des">
-                            Paradise for children ! 
+                             Find your favorite toy!!!
                         </div>
                     </div>
                 </div>
@@ -146,13 +142,14 @@ if (!$result){
                     <div class="" id="Lego"><h2>Lego</h2>
                     <?php
      require_once './functions.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM item,catalogue WHERE item.cid=catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cname";
-     $result =$pdo->query($query);
-     $error = $msg = "";
-     if (!$result){
-      $error = "Couldn't load data, please try again.";
-     }
-     while ($row = pg_fetch_assoc($result)) {
+     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Lego%'  ORDER BY cname";
+     $result = queryMysql($query);
+     $result = queryMysql($query);
+     $result->setFetchMode(PDO::FETCH_ASSOC);
+     $result->execute();
+     $resultSet = $result->fetchAll();
+     
+     foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
@@ -161,7 +158,7 @@ if (!$result){
         $iSize = $row['isize'];
         $iImage = $row['iimage'];
         
-        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$istatus</div><div ><img onclick=\"document.getElementById('$iname').style.display='block'\" id='testimg' src='". $iimage . "' width='100%'></div><div class='name'><h3>$iname</h3></div><h3>$iprice$</h3></div>"
+        echo "<div class='sp w3-quarter w3-card w3-center ' ><div class='w3-orange w3-padding-large'>$istatus</div><div ><img onclick=\"document.getElementById('$iname').style.display='block'\" id='testimg' src='./images/item/". $iimage . "' width='100%'></div><div class='name'><h3>$iname</h3></div><h3>$iprice$</h3></div>"
                 . "<!--SHOW MORE INFORMATION-->
   <div id='$iname' class='w3-modal'>
       <div class='w3-modal-content w3-animate-top w3-card-4'>
@@ -172,7 +169,7 @@ if (!$result){
         </div>
         <div class='w3-container w3-row'>
           <div class='w3-half'>
-              <img src='". $iimage . "' width='100%'>
+              <img src='./images/item/". $iimage . "' width='100%'>
           </div>
           <div class='w3-half w3-left'>
               <h3>$iprice$</h3>
@@ -191,13 +188,14 @@ if (!$result){
                     <div class=""id="Figure"><h2>Figure</h2>
                     <?php
      require_once './functions.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.catalogueId=Catalogue.cId AND cName LIKE '%Leather%'  ORDER BY cName";
+    $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Clay%'  ORDER BY cname";
      $result = queryMysql($query);
-     $error = $msg = "";
-     if (!$result){
-      $error = "Couldn't load data, please try again.";
-     }
-     while ($row = mysqli_fetch_array($result)) {
+     $result = queryMysql($query);
+     $result->setFetchMode(PDO::FETCH_ASSOC);
+     $result->execute();
+     $resultSet = $result->fetchAll();
+     
+     foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
@@ -237,13 +235,14 @@ if (!$result){
                     <div class=""id="Clay"><h2>Clay</h2>
                     <?php
      require_once './functions.php';
-     $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.catalogueId=Catalogue.cId AND cName LIKE '%Pants%'  ORDER BY cName";
+    $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Figure%'  ORDER BY cname";
      $result = queryMysql($query);
-     $error = $msg = "";
-     if (!$result){
-      $error = "Couldn't load data, please try again.";
-     }
-     while ($row = mysqli_fetch_array($result)) {
+     $result = queryMysql($query);
+     $result->setFetchMode(PDO::FETCH_ASSOC);
+     $result->execute();
+     $resultSet = $result->fetchAll();
+     
+     foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];

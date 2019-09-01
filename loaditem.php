@@ -2,16 +2,6 @@
 require_once './header.php';
 
 $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item";
-//if(isset($_POST['keyword'])){
-//    $keyword = sanitizeString($_POST['keyword']);
-//    $query = $query . " WHERE iName LIKE '%$keyword%' OR iId LIKE '%$keyword%'";
-//}
-$result = queryMysql($query);
-$result = queryMysql($query);
-$result = queryMysql($query);
-$result = queryMysql($query);
-$result = queryMysql($query);
-$result = queryMysql($query);
 $result = queryMysql($query);
 $result->setFetchMode(PDO::FETCH_ASSOC);
 $result->execute();
@@ -31,7 +21,7 @@ $resultSet = $result->fetchAll();
         <th>Options</th>
     </tr>
     <?php
-    foreach ($resultSet as $row)) {
+    foreach ($resultSet as $row) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
@@ -46,7 +36,7 @@ $resultSet = $result->fetchAll();
         echo "<td>$iPrice</td>";
         echo "<td>$iStatus</td>";
         echo "<td>$iSize</td>";
-        echo "<td ><img src='". $iImage . "' height='200px'></td>";
+        echo "<td ><img src='./images/". $iImage . "' height='200px'></td>";
         ?>
         <td>
             <form class="frminline" action="deleteitem.php" method="post" onsubmit="return confirmDelete();">
