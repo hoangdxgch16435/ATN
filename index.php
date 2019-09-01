@@ -101,7 +101,7 @@
         <?php
 require_once './functions.php';
 //load items
-$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item ";
+$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item ";
 $result = $pdo->query($sql);
 $error = $msg = "";
 if (!$result){
