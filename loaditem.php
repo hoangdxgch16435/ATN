@@ -1,7 +1,7 @@
 <?php
 require_once './header.php';
 
-$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM Item";
+$query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage FROM item";
 if(isset($_POST['keyword'])){
     $keyword = sanitizeString($_POST['keyword']);
     $query = $query . " WHERE iName LIKE '%$keyword%' OR iId LIKE '%$keyword%'";
