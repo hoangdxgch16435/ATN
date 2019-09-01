@@ -147,7 +147,7 @@ if (!$result){
                     <?php
      include './functions.php';
      $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM item,catalogue WHERE item.cid=catalogue.cid AND cname LIKE '%Lego%'  ORDER BY cname";
-     $result =$pdo->query($query);
+     $result =pg_query($pdo,$query);
      $error = $msg = "";
      if (!$result){
       $error = "Couldn't load data, please try again.";
