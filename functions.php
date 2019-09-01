@@ -13,6 +13,8 @@ if (empty(getenv("DATABASE_URL"))){
         ltrim($db["path"], "/")
     ));
 
+    echo 'done'
+
   }
   
 
