@@ -11,6 +11,9 @@ $error = $msg = "";
 if (!$result){
     $error = "Couldn't load data, please try again.";
 }
+$result->setFetchMode(PDO::FETCH_ASSOC);
+$result->execute();
+$resultSet = $result->fetchAll();
 ?>
 <br><br>
 <div>
@@ -33,7 +36,7 @@ if (!$result){
         <th>Options</th>
     </tr>
     <?php
-    while ($row = mysqli_fetch_array($result)) {
+    foreach ($resultSet as $row)) {
         $iId = $row['iid'];
         $iName = $row['iname'];
         $iDescription = $row['idescription'];
