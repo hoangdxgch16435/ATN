@@ -38,7 +38,7 @@
                 line-height: 30px;
                 padding-left: 5px;
                 font-weight: bold;
-                color: black;
+                color: purple;
             }
             .detail{
                 padding-left: 15px;
