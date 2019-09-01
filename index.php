@@ -115,7 +115,7 @@ $result = queryMysql($query);
                         <center><li><a href="./index.php">Home</a></li></center>
                         <center><li><a href="./header.php">Admin</a></li></center>
                         <li><a href="#Lego">Lego</a></li>
-                        <li><a href="#Figure">Figure</a></li>
+                        <li><a href="#Doll">Doll</a></li>
                         <li><a href="#Clay">Clay</a></li>
 
                     </ul>
@@ -184,10 +184,10 @@ $result = queryMysql($query);
      
                 </div>        
                     <div class="list w3-row">
-                    <div class=""id="Figure"><h2>Figure</h2>
+                    <div class=""id="Doll"><h2>Doll</h2>
                     <?php
      require_once './functions.php';
-    $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Figure%'  ORDER BY cname";
+    $query = "SELECT iid, iname, idescription, iprice, istatus, isize, iimage,cname FROM Item,Catalogue WHERE Item.cid=Catalogue.cid AND cName LIKE '%Doll%'  ORDER BY cname";
      $result = queryMysql($query);
      $result->setFetchMode(PDO::FETCH_ASSOC);
      $result->execute();
